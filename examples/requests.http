@@ -1,6 +1,6 @@
 @baseUrl = http://127.0.0.1:8000
 
-### Create a fictional student
+### 1. Create a fictional student
 POST {{baseUrl}}/students
 Content-Type: application/json
 
@@ -8,20 +8,46 @@ Content-Type: application/json
   "student_id": "STU-101",
   "name": "Jordan Lee",
   "date_of_birth": "2004-09-12",
-  "email": "jordan.lee@example.test",
+  "email": "jordan.lee@example.com",
   "phone": "+1 555 010 1010",
   "course": "Computer Science",
   "address": "42 Example Street",
   "enrollment_date": "2023-08-01"
 }
 
-### List with a course filter
+### 2. List all students
+GET {{baseUrl}}/students
+
+### 3. Search students by name or student ID
+GET {{baseUrl}}/students?q=Jordan
+
+### 4. List students with a course filter and pagination
 GET {{baseUrl}}/students?course=computer&limit=25&offset=0
 
-### Partially update one student
+### 5. Retrieve a student by ID
+GET {{baseUrl}}/students/STU-101
+
+### 6. Partially update a student
 PATCH {{baseUrl}}/students/STU-101
 Content-Type: application/json
 
 {
   "course": "Data Science"
 }
+
+### 7. Replace a student's editable details
+PUT {{baseUrl}}/students/STU-101
+Content-Type: application/json
+
+{
+  "name": "Jordan Lee",
+  "date_of_birth": "2004-09-12",
+  "email": "jordan.lee@example.com",
+  "phone": "+1 555 010 1010",
+  "course": "Computer Science",
+  "address": "42 Example Street",
+  "enrollment_date": "2023-08-01"
+}
+
+### 8. Delete a student
+DELETE {{baseUrl}}/students/STU-101
