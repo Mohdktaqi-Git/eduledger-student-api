@@ -1,0 +1,22 @@
+# Python environments and tooling
+.venv/
+.venv311/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tmp/
+
+# Local configuration and persistent development data
+.env
+data/*.db
+data/*.db-*
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+@baseUrl = http://127.0.0.1:8000
+
+### Create a fictional student
+POST {{baseUrl}}/students
+Content-Type: application/json
+
+{
+  "student_id": "STU-101",
+  "name": "Jordan Lee",
+  "date_of_birth": "2004-09-12",
+  "email": "jordan.lee@example.test",
+  "phone": "+1 555 010 1010",
+  "course": "Computer Science",
+  "address": "42 Example Street",
+  "enrollment_date": "2023-08-01"
+}
+
+### List with a course filter
+GET {{baseUrl}}/students?course=computer&limit=25&offset=0
+
+### Partially update one student
+PATCH {{baseUrl}}/students/STU-101
+Content-Type: application/json
+
+{
+  "course": "Data Science"
+}

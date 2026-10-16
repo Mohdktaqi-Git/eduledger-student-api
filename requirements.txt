@@ -1,0 +1,12 @@
+fastapi>=0.115,<0.128
+starlette>=0.40,<0.47
+uvicorn[standard]>=0.30,<1.0
+sqlalchemy>=2.0,<3.0
+pydantic-settings>=2.0,<3.0
+email-validator>=2.0,<3.0
+
+# Development and verification
+pytest>=8.0,<10.0
+httpx>=0.27,<1.0
+ruff>=0.8,<1.0
+mypy>=1.13,<2.0
